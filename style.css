@@ -528,12 +528,15 @@ html[lang="en"] .card-more:after {
 .products-information {
     background-color: #375d81;
     background-color:#2980b9;
-    color:#fff;
     margin: 0 auto;
     text-align: center;
     width: 93%;
     padding:2% 2% 1% 2%;
     text-shadow:0 0 7px rgba(0,0,0,0.75);
+}
+.products-information,
+.products-information a {
+  color: #fff;
 }
 .product-boxes {
     display: block;
