@@ -1,0 +1,199 @@
+/* LEAVE THIS: */
+#contentwrap {
+	background: rgb(35, 31, 32);
+}
+
+body {
+	width:960px;
+	min-width:960px;
+}
+
+/* ============ BELOW IS COPY-PASTED FROM STYLE.CSS ============ */
+
+header img {
+	float:left;
+}
+#logo-image {
+	float:left;
+	padding:10px 10px 0 0;
+}
+header #identity {
+	display:block;
+	font-size:2em;
+	line-height:76px;
+	padding:0.2em 1em;
+}
+#identity span {
+	display:inline;
+	clear:none;
+	float: none;
+    padding: 0;
+}
+
+
+a.cta-icon {
+	float:left;
+	margin-right:0.5em;
+}
+.quickbox {
+	text-align:left;
+}
+.quickbox .icon {
+	display:inline;
+}
+.quickbox-text {
+	margin-left:120px;
+}
+
+.quickbox-text p {
+	margin-top:0;
+}
+
+html {
+	background:url("./images/wood-1.jpg");
+}
+body {		
+	border-left: 0.5em solid #231F20;
+	border-right: 0.5em solid #231F20;
+	
+	border:none;
+}
+article {
+	display:block;
+}
+header #identity {
+	text-shadow:0 0 1px #fff;
+	font-size:3em;
+	text-shadow:0 0 1px #aaa;
+}
+#contentwrap {
+	float:left;
+	width:98%;
+	background:rgba(0,0,0,0.6);
+	padding:10px 1% 1% 1%;
+	border-radius:0 9px 0 0;
+}
+/* Un-linearize various stuff */
+.alignright,
+.pull-right {
+	width:40%;
+	float:right;
+	margin:0 0 1em 1em;
+	clear:right;
+}
+.alignleft,
+.pull-left {
+	width:40%;
+	float:left;
+	margin:0 1em 1em 0;
+}
+
+.fb_iframe_widget {
+	display:block !important;
+}
+
+/* Switch navigation */
+#nav-button {
+	display:none;
+}
+#global-nav {
+	/*overflow:auto;*/
+	float:left;
+	width:98%;
+	background:transparent;
+	/*margin:0 1% -10px 1%;*/
+
+	width:100%;
+	margin-bottom:-10px;
+}
+#global-nav ul {
+	list-style:none;
+	float:left;
+	width:100%;
+	position:relative;
+	z-index:10;
+}
+#global-nav ul,
+#global-nav ul li {
+	padding:0;
+	margin:0;
+}
+/*
+#global-nav ul:after {
+	content: ""; 
+	clear:both; 
+	display:block;
+}
+*/
+#global-nav ul li {
+	float:left;
+	position:relative;
+	margin-right:0.2em;
+	border-bottom:none;
+	border-top:none;
+}
+#global-nav ul li a {
+	border-top:1px solid #333;
+}
+#global-nav ul ul {
+	display:block;
+	display:none;
+	position:absolute;
+	top:100%;
+	z-index:999;
+	box-shadow:1px 4px 3px #aaa;
+	font-size:0.8em;
+}
+#global-nav ul li:hover ul {
+	display:block;
+}
+#global-nav ul ul li,
+#global-nav ul ul li a {
+	position:relative;
+	display:block;
+	float:none;
+	border-radius:0;
+	background:#444;
+	background:rgba(0,0,0,0.9);
+}
+#global-nav ul ul li {
+	margin:0;
+}
+#global-nav ul ul li a {
+	padding:0.5em 1em;
+}
+#global-nav ul ul li a:hover,
+#global-nav ul ul li.current-menu-item a {
+	background:#333;
+	color:#fff;
+}
+#global-nav ul ul li {
+	float: none;
+	/*border-top: 1px solid #6b727c;
+	border-bottom: 1px solid #575f6a;*/
+}
+
+#global-nav a {
+	/*margin-right:0.2em;*/
+}
+#global-nav a {
+	/*float:left;*/
+	border-top-right-radius:3px;
+	border-top-left-radius:3px;
+	background:rgba(0,0,0,0.65);
+}
+#global-nav a:hover {
+	background:#444;
+	border-top:1px solid #333;
+	
+	background:#353430;
+	background:rgba(0,0,0,0.8);
+}
+#global-nav .current-menu-item {
+}
+#global-nav .current-menu-item a,
+#global-nav .current-menu-ancestor a {
+	background:#FF9;
+	background:#fff;
+	color:#000;
+}

@@ -1,0 +1,1369 @@
+#breadcrumb-items {
+    padding:0;
+    margin:0;
+    list-style:none;
+    display:block;
+    font-size:0.9rem;
+    margin-bottom: 1rem;
+}
+#breadcrumb-items li:last-child {
+    font-style: bold;
+}
+
+#breadcrumb-items,
+#breadcrumb-items a {
+    color:#06d;
+    text-shadow: 0 0 5px rgba(255,255,255,1);
+}
+
+#wrap {
+	position:relative;
+	overflow:hidden;
+}
+#wrapwrap {
+	position:relative;
+}
+
+/* Outer container */
+#nav {
+	display:none;
+	z-index:999;
+	clear:both;
+}
+#nav:target {
+	display:block;
+}
+
+
+#nav-on, 
+#nav-off {
+    background-color:#fff;
+	color:#900;
+    display: inline-block;
+    margin: 0 1em;
+    padding: 0.2em;
+}
+
+#nav-on {
+    background-color:#444;
+    background-color: rgba(255, 255, 255, 0.3);
+    background-color: rgba(0,0,0,0.3);
+    font-size: 2em;
+    height: 1em;
+    left: 0;
+    line-height: 1.2em;
+    margin: 0.1em;
+    position: absolute;
+    text-align: center;
+    top: 0;
+    background-color: transparent;
+}
+
+#nav-on > span {
+  position: relative;
+  padding-left: 1.25em;
+}
+#nav-on > span:before {
+  content: "";
+  position: absolute;
+  top: 0.25em;
+  left: 15%;
+  width: 1em;
+  width:70%;
+  height: 0.125em;
+  border-top: 0.375em double #fff;
+  border-bottom: 0.125em solid #fff;
+}
+#nav-off {
+	box-sizing:border-box;
+    margin:0;
+    padding:1em;
+}
+.navigating #nav-on > span:before {
+	font-family:Verdana, Geneva, sans-serif;
+	content:"x";
+	border:none;
+	color:white;
+	top:-0.15em;
+}
+
+/*==========================*/
+/*		Common rules		*/
+/*==========================*/
+/* All lists */
+#nav ul {
+	display:block;
+	margin:0 auto;
+	padding:1em 1%;
+	padding:0 1%;
+	
+	background:#eee;
+	position: relative;
+    z-index: 999;
+	background:#fff;
+}
+
+/* All list items */
+#nav ul li {
+	padding:0;
+	margin:0;
+	display:block;
+	border-bottom:1px solid #e8e8e8;
+}
+
+#nav ul li:last-child {
+	border-bottom:none;
+}
+
+/* All links */
+#nav ul a {
+	text-decoration:none;
+	padding:0.75em;
+	display:block;
+	color:#07d;
+	color:#37a;
+	background-color:#fff;
+}
+#nav ul a:hover {
+	background-color:#f4f4f4;
+}
+#nav ul ul li a {
+	padding-left:1.75em;
+}
+/* Current item */
+#nav ul li.current-menu-item > a {
+    background-color:#def;
+    font-weight:bold;
+}
+/*==========================*/
+/*		The ROOT list		*/
+/*==========================*/
+/* The list */
+#nav > ul {
+	border-top:1px solid #e8e8e8;
+	border-bottom:1px solid #e8e8e8;
+}
+/* The list items */
+#nav > ul > li {
+    float:left;
+    display: block;
+    margin-right: 1em;
+}
+/* The links */
+#nav > ul > li a {
+}
+
+/*==========================*/
+/* 		All sub-lists 		*/
+/*==========================*/
+/* Lists */
+#nav ul ul {
+}
+/* Items */
+#nav ul ul li {
+}
+/* Links */
+#nav ul ul a {
+}
+
+/* Progressing ... */
+/* JS-ready */
+
+.js #nav,
+.js #nav-off {
+	position:absolute;
+	width:75%;
+	left:-75%;
+	top:0;
+	background:#fff;
+}
+.js #nav {
+	top:3em;
+}
+.js #nav,
+.js #nav-off {
+	display:none;
+}
+.js .navigating #nav,
+.js .navigating #nav-off {
+	display:block;
+}
+.js .navigating #wrapwrap {
+	position:static; /* TESTING iOS fix */
+	left:75%;
+}
+
+.js .navigating #wrapwrap {
+	overflow:visible;
+}
+
+
+
+
+.js.csstransforms3d.csstransitions #wrapwrap,
+.js.csstransforms3d.csstransitions #nav,
+.js.csstransforms3d.csstransitions #nav-off {
+	left:0 !important;
+}
+.js.csstransforms3d.csstransitions .navigating #nav,
+.js.csstransforms3d.csstransitions .navigating #nav-off {
+}
+
+.js.csstransforms3d.csstransitions #nav,
+.js.csstransforms3d.csstransitions #nav-off {
+	-webkit-transform:translate3d(-100%,0,0);
+	transform:translate3d(-100%,0,0);
+	transform:translate3d(-100%,0,0);
+	-webkit-transition:-webkit-transform .8s ease;
+	transition:transform .8s ease; /* slide close */
+	
+}
+.js.csstransforms3d.csstransitions #wrapwrap {
+	-webkit-transform:translate3d(0,0,0);
+	transform:translate3d(0,0,0);
+}
+.js.csstransforms3d.csstransitions .navigating #wrapwrap {
+	-webkit-transform:translate3d(75%,0,0);
+	transform:translate3d(75%,0,0);
+	-webkit-transition:-webkit-transform .8s ease;
+	transition:transform .8s ease; /* slide open */
+}
+
+/* Breadcrumb navigation */
+#jumplinks {
+    margin:0 0 1.5em;
+    font-size:smaller;
+    color:#fff;
+}
+#nav-lang {
+    top:1em;
+    right:0;
+    left:0;
+    width:100%;
+    max-width: 1200px;
+}
+#langswitch {
+    list-style:none;
+    margin:0;
+    padding:0.2em 1.35em;
+    display:block;
+    color:#999;
+    font-size:small;
+	
+    margin-bottom:1em;
+    background:rgba(255,255,255,0.25);
+    padding:0.2em 1.35em;
+	
+    background:#000;
+    background:rgba(0, 0, 0, 0.7);
+}
+#langswitch a {
+    color:#fff;
+    text-shadow:0 0 3px rgba(0, 0, 0, 1);
+    display: inline-block;
+    text-decoration:none;
+    padding:0.5em 0;
+}
+#langswitch a:hover {
+    text-decoration:underline;
+}
+#breadcrumb-items {
+    float:left;
+    width:100%;
+    text-align: center;
+    clear:both;
+}
+#breadcrumb-items li:after {
+    content:">";
+    margin:0 0.5em;
+}
+#breadcrumb-items li:last-child:after {
+    content:"";
+    margin:0;
+}
+#breadcrumb-items li {
+    display:inline;
+}
+#breadcrumb-items li a {
+    display:inline-block;
+    padding:0.2em;
+}
+#langswitch {
+    float:none;
+}
+
+#langswitch img {
+	width:auto;
+	display:inline;
+	vertical-align:middle;
+	margin-top:-2px;
+}
+
+
+/*@media (min-width: 1080px) {*/
+
+#nav-lang {
+    position:absolute;
+}
+#langswitch {
+    display: inline-block;
+    float:right;
+}
+
+#nav-on, 
+#nav-off,
+#navcontrol {
+	display:none;
+}
+.js #nav,
+#nav {
+	display:block;
+}
+#nav ul {
+	background:transparent;
+	background-color:rgba(0,0,0,0);
+	font-size:1.2em;
+}
+#nav ul li {
+	border:none;
+}
+#nav ul li:last-child {
+	border-bottom:none;
+}
+#nav ul a {
+	color:#fff;
+	padding:.4em !important;
+	background-color:#555;
+	background-color:rgba(0,0,0,0);
+}
+#nav ul a:hover {
+        background-color:#444;
+	background-color:rgba(255,255,255,0.05);
+}
+#nav > ul {
+	border:none;
+	display:block;
+	position:relative;
+	margin-top:-4rem;
+	padding-top:1em;
+	padding-bottom:1em;
+}
+#nav > ul > li {
+	display:inline-block;
+	position:relative;
+	/*background:red;*/
+}
+#nav > ul > li > a {
+	border-bottom:2px solid rgba(255,255,255,0.25);
+	padding:0.5em 1.5em !important;
+	-webkit-transition:all .5s;
+	transition:all .5s;
+}
+
+#nav ul li.current-menu-item > a {
+    background-color:#444;
+    background-color:rgba(0,0,0,0.4);
+    border-top-color:#333;
+    border-bottom:1px solid #000;
+}
+#nav > ul > li > a:hover,
+#nav > ul > li > a:focus,
+#nav > ul > li.current > a,
+#nav > ul > li.current-menu-item > a,
+#nav > ul > .current-menu-parent > a {
+	border-bottom:2px solid rgba(255,255,255,0.6);
+	text-shadow:0 0 0.2em rgba(0, 0, 0, 1);
+	font-weight:normal;
+        background-color:inherit;
+        background-color:#444;
+	background-color:rgba(0, 0, 0, 0.5);        
+}
+
+#nav > ul > li:hover > ul,
+#nav > ul > li.infocus > ul {
+	display:block;
+	position:absolute;
+	margin:0;
+	padding:0;
+	list-style:none;
+	background:#333;
+	width:100%;
+	min-width:200px;
+}
+#nav > ul ul {
+	display:none;
+	font-size:0.8em;
+	box-shadow:0.2em 0.2em 0.2em rgba(0, 0, 0, 0.5);
+}
+#nav ul ul li a {
+	padding-left:0;
+	padding-left:0.2em;
+	border-top:1px solid #444;
+	border-bottom:1px solid #000;
+}
+
+
+
+.js #nav {
+	position:relative;
+	width:auto;
+	left:0;
+	top:0;
+	background:transparent;
+}
+.js #nav {
+	top:0;
+}
+.js .navigating #wrapwrap {
+	position:relative;
+	left:0;
+}
+.js.csstransforms3d.csstransitions #nav {
+	-webkit-transform:translate3d(0,0,0);
+	transform:translate3d(0,0,0);
+}
+.js.csstransforms3d.csstransitions .navigating #wrapwrap {
+	-webkit-transform:translate3d(0,0,0);;
+	transform:translate3d(0,0,0);
+}
+
+/*}*/
+
+
+/*********************** style.css **************************/
+.clearfix:before, 
+.clearfix:after { content: " "; display: table; }
+.clearfix:after { clear: both; }
+
+html,body {
+    margin:0;
+    padding:0;
+    font-family:Lora,Roboto, Tahoma, Geneva, sans-serif;
+}
+nav {
+    font-family:Roboto, Tahoma, Geneva, sans-serif;
+}
+h1,h2,h3,h4,h5,#sitename {
+    font-family:"Open Sans Condensed", Oswald, Tahoma, Geneva, sans-serif;
+    font-family:Lora, Georgia, "Times New Roman", Times, serif;
+    font-weight:300;
+    margin-bottom:1.4rem;
+}
+h1 { font-size:2.2em; margin-top:1.4rem; }
+h2 { font-size:2em; }
+h3 { font-size:1.3em; }
+h4 { font-size:1em; }
+h2 {	
+    position:relative;
+    background-color:#e32b00;
+    background-color:#333;
+    color:#fff;
+    margin-left:0;
+    display:block;
+    padding:.6em;
+    z-index:2;
+    text-align:center;
+
+    background-color:#222;
+    background-image:url('../img/wooden_plank_closeup_9250002-1080.jpg');
+    background-repeat:repeat;
+    background-position:left top;
+    background-size:100% auto;
+    text-shadow:0 0 7px rgba(0,0,0,1);
+    border-radius:0.2em;
+    font-weight:bold;
+    font-size:2.6em;
+
+    box-shadow:0 3px 2px rgba(0,0,0,0.75);
+    border-radius:3px;
+
+    /*color:#333;
+    text-shadow:0 0 6px rgba(255, 255, 255, 1);*/
+}
+h2:before {
+    content:"";
+    display:block;
+    position:absolute;
+    width:100%;
+    height:100%;
+    background-color:rgba(0,0,0,0.3);
+    top:0;
+    bottom:0;
+    left:0;
+    right:0;
+    z-index:-1;
+    border-radius:3px;
+}
+a,
+a img {
+    border:none;
+    color:#06d;
+}
+#header,
+#footer {
+    background:#000;
+    background:rgba(0,0,0,0.9);
+    color:#fff;
+    padding:1em 0;
+}
+#footer aside ul {
+    display:block;
+    list-style:none;
+    padding:0;
+    margin:0;
+    text-align:center;
+    line-height:81px;
+}
+#footer aside ul li {
+    display:inline-block;
+    display:inline;
+}
+#footer aside ul a {
+    display: inline;
+    width:100px;
+    vertical-align:middle;
+    position:relative;
+}
+#footer aside ul a:after {
+    content:"";
+    position:absolute;
+    top:0;
+    left:0;
+    bottom:0;
+    right:0;
+    background-color:rgba(0,0,0,0.1);
+}
+#footer aside ul a:hover:after {
+    background-color:rgba(0,0,0,0);
+}
+#footer {
+    text-align: center;
+}
+#header {
+    background-image:url('../img/wooden_plank_closeup_9250002-480.jpg');
+    background-image:none;
+    background-color:#222;
+    padding:0.25em 0;
+}
+#homelink {
+    display:block;
+    float:left;
+    margin:0 1em 1em 4.75em;
+}
+#homelink > img {
+    max-width:45px;
+}
+#tagline,
+#sitename {
+    font-family:Lora, Georgia, "Times New Roman", Times, serif;
+    display:block;
+    margin:0;
+}
+#sitename {
+    font-size:1.2em;
+}
+#tagline {
+    font-size:small;
+    display:none;
+}
+/*#nav .mw,*/
+article .mw {
+    background:#fff;
+    background:rgba(255,255,255,0.8);
+    /*padding:1em 1%;*/
+}
+article .mw {
+    /*padding:1em 0;*/
+}
+article .mw > section {
+    margin:0 0.5em;
+}
+article .mw > .summary {
+    margin:0;
+}
+article section p {
+    margin-top:0;
+    margin-bottom:1em;
+    padding:.5em 1em .5em 1em;
+}
+.summary {
+    /*font-size:2em;
+    font-family:"Open Sans Condensed",Oswald,Tahoma,Geneva,sans-serif;
+
+    font-size:1.8em;
+    font-family:Oswald,Tahoma,Geneva,sans-serif;*/
+
+    font-size:1.8em;
+    font-family:Lora,Georgia,"Times New Roman", Times, serif;
+
+    text-align:center;
+}
+.summary p {
+    line-height:1.4em;
+    text-shadow:0 0 0.1em rgba(0,0,0,0.25);
+}
+img {
+    width:100%;
+    max-width:100%;
+    display:block;
+}
+figure {
+    background:#000;
+    background:#222;
+    color:#fff;
+    font-size:0.8em;
+    margin:0 auto;
+}
+figcaption {
+    padding:0.25em;
+    background:#fff;
+    color:#222;
+}
+figcaption h1 {
+    font-size:1.8em;
+}
+.video {
+    display:block;
+    height:0;
+    padding-bottom:56.25%;
+    position:relative;
+}
+.video iframe {
+    height:100%;
+    left:0;
+    position:absolute;
+    top:0;
+    width:100%;
+    z-index:1 !important;
+}
+.panorama {
+    margin-bottom:1rem;
+}
+.panorama figcaption {
+    text-align:center;
+}
+.panorama figcaption h1 {
+    margin:0;
+}
+.promos ul,
+.cards {
+    display:block;
+    list-style:none;
+    padding:0;
+    margin:0;
+}
+.card {
+    display:block;
+    position:relative;
+    clear:both;
+    margin-bottom:1.4rem;
+    /*border-top:1px solid #ccc;
+    border-bottom:1px solid #aaa;*/
+}
+/*
+.card:first-child {
+    border-top:none;
+}
+.card:last-child {
+    border-bottom:none;
+}
+*/
+.card-image {
+    display:block;
+    overflow:hidden;
+}
+.card-info {
+}
+/*.card-info > p:last-child:after {*/
+.card-more:after,
+.null-instagram-feed p > a {
+    display:block;
+    clear:both;
+    margin:0 auto;
+    padding:0.2em 2%;
+    background-color:#e32b00;
+    color:#fff;
+    text-align:center;
+    border-radius:3px;
+    -webkit-transition:all .5s; 
+    transition:all .5s; 
+}
+.card-more:after {
+    content:'+ Les mer';
+}
+.card h3 {
+    margin:0 0 0.2em 0;
+    /*font-family:Oswald,Tahoma, Geneva, sans-serif;*/
+    font-weight:bold;
+    text-transform:uppercase;
+    color: #fff;
+    padding:2%;
+    background-color:#666;
+    background-color:rgba(0,0,0,0.6);
+    position:absolute;
+    top:0;
+    left:0;
+    width:96%;
+}
+.card p {
+    margin-top:0.3rem;
+    margin-bottom:0.3rem;
+}
+.card a {
+    display:block;
+    overflow:auto;
+    text-decoration:none;
+    color:#333;
+    /*border:2px solid transparent;
+    border-left:none;
+    border-right:none;*/
+    /*padding:0.5em 0;*/
+}
+.card a:hover {
+    -webkit-transition:all 1s;
+    transition:all 1s;
+    backface-visibility:visible;
+    background-color:#e7e7e7;
+    /*border-color:#777;*/
+}
+.card a:hover h3,
+.card a:hover p {
+    text-decoration:underline;
+    text-decoration:none;
+}
+/*.card a:hover .card-info > p:last-child:after {*/
+/*.card:hover .card-info:after {
+    background-color:#09f;
+    background-color:#e32b00;
+}
+*/
+.card a:hover img,
+.card a:focus img {
+    -webkit-transform:scale(1.1,1.1);
+    transform:scale(1.1,1.1);
+    -webkit-transition:transform 3s ease-out;
+    transition:transform 3s ease-out;
+}
+
+.null-instagram-feed ul {
+    display:block;
+    list-style:none;
+    margin:0;
+    padding:0;
+}
+.null-instagram-feed ul li {
+    float:left;
+    width:25%;
+}
+.null-instagram-feed p {
+    text-align:center;
+    padding:1em;
+}
+.null-instagram-feed p > a {
+    display:inline;
+}
+.big-icon {
+    font-size:3em; 
+    margin:0.1em 0 0.4em 0; 
+    display:block;
+    text-shadow:none;
+}
+/*
+* Product boxes
+*/
+.products-information {
+    background-color: #375d81;
+    background-color:#2980b9;
+    color:#fff;
+    margin: 0 auto;
+    text-align: center;
+    width: 93%;
+    padding:2% 2% 1% 2%;
+    text-shadow:0 0 7px rgba(0,0,0,0.75);
+}
+.product-boxes {
+    display: block;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    background-size:auto;
+    border-radius:1em;
+}
+.product-box {
+    background-color:#ccc;
+    display: inline-block;
+    margin: 0.5em;
+    padding: 4%;
+    width: 60%;
+    /*border-radius: 7px;*/
+    box-shadow: 0 0 0.2em rgba(0, 0, 0, 0.5);
+    box-shadow:0 3px 2px rgba(0, 0, 0, 0.75), 0 0 4em rgba(0,0,0,0.2) inset;
+    box-shadow:none;
+    text-shadow:0 0 3px #000;
+    text-shadow:0 0 7px rgba(0, 0, 0, 1);
+    text-shadow:none;
+
+    /*background-image:url(../img/wooden_plank_closeup_9250002-400.jpg);*/
+    font-size:1.4em;
+    color:#000;
+    text-shadow:0 0 7px rgba(255,255,255,0.75);
+}
+.product-box:nth-child(1),
+.product-box:nth-child(1n+5) {
+    background-color:#b8ecd7;
+    background-color:#405952;
+    background-color:#ff358b;
+    background-color:rgba(146,205,207,0.9);
+    background-color:#92cdcf;
+    background-color:#b0cc99;
+}
+.product-box:nth-child(2),
+.product-box:nth-child(2n+5) {
+    background-color:#083643;
+    background-color:#9c9b7a;
+    background-color:#01b0f0;
+    background-color:#dc3522;
+    background-color:#677e52;
+    color:#fff;
+    text-shadow:0 0 7px rgba(0,0,0,0.75);
+}
+.product-box:nth-child(3),
+.product-box:nth-child(3n+5) {
+    background-color:#b1e001;
+    background-color:#ffd393;
+    background-color:#aeee00;
+    background-color:#01b0f0;
+    background-color:#b7ca79;
+    /*background-color:rgba(174,238,0,0.4);*/
+}
+.product-box:nth-child(4),
+.product-box:nth-child(4n+5) {
+    background-color:#cef09d;
+    background-color:#ff974f;
+    backrgound-color:#f6e8b1;
+}
+.product-box:nth-child(5),
+.product-box:nth-child(5n+5) {
+    background-color:#476c5e;
+    background-color:#f54f29;
+    background-color:#89725b;
+    color:#fff;
+    text-shadow:0 0 7px rgba(0,0,0,0.75);
+}
+.product-price {
+    font-family: Lora,serif;
+    font-size: 1.8em;
+    font-style: italic;
+    font-weight: bold;
+}
+.product-price-info {
+    font-size: 0.8em;
+    font-style: italic;
+}
+.weekdays,
+.fullweek,
+.weekend {
+    display:block;
+    width:80%;
+    margin:10%;
+    height:0.5em;
+    border:1px solid rgba(255,255,255,1);
+}
+.weekdays:after,
+.fullweek:after,
+.weekend:after {
+    content:"";
+    width:57%;
+    background:rgba(255,255,255,0.9);
+    display:block;
+    height:0.5em;
+}
+.fullweek:after {
+    width:100%;
+}
+.weekend:after {
+    float:right;
+    width:42%;
+}
+
+/*
+* BEGIN icomoon font
+*/
+@font-face {
+    font-family: 'icomoon';
+    src:url('../fonts/icomoon.eot?-fac2c1');
+    src:url('../fonts/icomoon.eot?#iefix-fac2c1') format('embedded-opentype'),
+            url('../fonts/icomoon.woff?-fac2c1') format('woff'),
+            url('.//fonts/icomoon.ttf?-fac2c1') format('truetype'),
+            url('.//fonts/icomoon.svg?-fac2c1#icomoon') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+[class^="icon-"], [class*=" icon-"] {
+    font-family: 'icomoon';
+    speak: none;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+
+    /* Better Font Rendering =========== */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering:optimizeLegibility;
+}
+
+.icon-home:before {
+    content: "\e600";
+}
+.icon-quill:before {
+    content: "\e601";
+}
+.icon-images:before {
+    content: "\e602";
+}
+.icon-tag:before {
+    content: "\e603";
+}
+.icon-tags:before {
+    content: "\e604";
+}
+.icon-cart:before {
+    content: "\e605";
+}
+.icon-coin:before {
+    content: "\e606";
+}
+.icon-credit:before {
+    content: "\e607";
+}
+.icon-phone:before {
+    content: "\e608";
+}
+.icon-envelope:before {
+    content: "\e609";
+}
+.icon-location:before {
+    content: "\e60a";
+}
+.icon-map:before {
+    content: "\e60b";
+}
+.icon-mobile:before {
+    content: "\e60c";
+}
+.icon-quotes-left:before {
+    content: "\e60d";
+}
+.icon-airplane:before {
+    content: "\e60e";
+}
+.icon-menu:before {
+    content: "\e60f";
+}
+.icon-download:before {
+    content: "\e610";
+}
+.icon-info:before {
+    content: "\e611";
+}
+.icon-cancel-circle:before {
+    content: "\e612";
+}
+.icon-checkmark-circle:before {
+    content: "\e613";
+}
+.icon-close:before {
+    content: "\e614";
+}
+.icon-checkmark:before {
+    content: "\e615";
+}
+.icon-minus:before {
+    content: "\e616";
+}
+.icon-plus:before {
+    content: "\e617";
+}
+.icon-arrow-up:before {
+    content: "\e618";
+}
+.icon-arrow-right:before {
+    content: "\e619";
+}
+.icon-arrow-down:before {
+    content: "\e61a";
+}
+.icon-arrow-left:before {
+    content: "\e61b";
+}
+.icon-table:before {
+    content: "\e61c";
+}
+.icon-googleplus:before {
+    content: "\e61d";
+}
+.icon-facebook:before {
+    content: "\e61e";
+}
+.icon-instagram:before {
+    content: "\e61f";
+}
+.icon-twitter:before {
+    content: "\e620";
+}
+.icon-vimeo:before {
+    content: "\e621";
+}
+.icon-flickr:before {
+    content: "\e622";
+}
+.icon-picassa:before {
+    content: "\e623";
+}
+/*
+* End icomoon font
+*/
+
+/*@media (min-width: 480px) {*/
+#header {
+    background-image:url('../img/wooden_plank_closeup_9250002-1080.jpg');
+    background-image:none;
+}
+
+#sitename {
+    font-size:2em;
+}
+.card {
+    margin:0;
+}
+.card h3 {
+    position:relative;
+    padding:0.2em;
+    width:auto;
+
+    padding:0;
+    background:transparent;
+    color:#333;
+}
+.card-image {
+    float:left;
+    width:33%;
+    margin-right:2%;
+    width:50%;
+    margin:0;
+}
+.card-info {
+    float:right;
+    width:65%;
+
+    width:50%;
+    padding:2%;
+    box-sizing:border-box;
+}
+.card-more:after {
+    display:inline-block;
+    float:left;
+}
+.card:nth-child(even) .card-more:after {
+    float:right;
+}
+.card:nth-child(even) {
+}
+.card:nth-child(even) .card-image {
+    float:right;
+    /*margin:0 0 0 2%;*/
+}
+
+.null-instagram-feed ul li {
+    float:left;
+    width:12.5%;
+}
+
+.product-box {
+    width: 34%;
+}
+/*}
+@media (min-width: 1080px) {*/
+html {
+    /*background:#000 url(http://www.legendarylodge.no/resources/legendary.jpg) no-repeat;
+    background:#fff url(./img/autumn-fall-leaf-770.jpg) repeat;
+    background-image:url(./img/wood_big_eyes_saw_marks_9250009.JPG);
+    background-image:url(./img/wooden_plank_closeup_9250002.JPG);
+    background-size:cover;*/
+    background:#fff url('../img/wooden_plank_closeup_9250002.JPG') repeat;
+    background:#fff url('../img/bg-wood-hd.jpg') repeat;
+    background-size:100% auto;
+}
+article .mw {
+    min-height:500px;
+}
+article > .mw {
+    box-shadow:0 0 1em rgba(0,0,0,0.9);
+}
+/* max-width (don't allow content to stretch the entire screen width) */
+.mw {
+    max-width:1200px;
+    margin:0 auto;
+}
+article .mw > section {
+    margin:0 1%;
+}
+/*
+#nav .mw {
+	background:transparent;
+}
+*/
+#header {
+    padding-bottom:4rem;
+    padding-top:1em;
+    background-color:rgba(0,0,0,0.4);
+    box-shadow:0 0 15em 1em rgba(0, 0, 0, 0.9);
+
+    background-color: rgba(0, 0, 0, 0.4);
+    box-shadow: 0 0 10em 10em rgba(0, 0, 0, 0.4);
+	
+    background-color:transparent;
+    background-color: rgba(0, 0, 0, 0.3);
+    box-shadow: 0 0 10em 10em rgba(0, 0, 0, 0.3);
+	
+    /*background-color: rgba(0, 0, 0, 0.7);
+    box-shadow: 0 0 5em 5em rgba(0, 0, 0, 0.7);*/
+}
+#sitename {
+    font-size:3em;
+}
+#tagline {
+    display:block;
+}
+#homelink {
+    margin-left:0.75em;
+}
+#homelink > img {
+    max-width:100px;
+}
+.summary {
+    font-size:2.3em;
+    position:relative;
+}
+.pull-right {
+    float:right;
+}
+figure.medium {
+    width:30%;
+}
+.promos,
+.cards {
+    display:block;
+    float:none;
+    clear:both;
+    overflow:auto;
+    overflow:visible;
+}
+
+.card {
+    float:left;
+    width:25%;
+    clear:none;
+    border:none;
+}
+.card-image {
+    float:none;
+    width:100%;
+    margin:0;
+}
+.card-image,
+.card-info,
+.card:nth-child(2n) .card-image {
+    float:none;
+    margin:0;
+}
+.card-more {
+    display:none;
+}
+.card a {
+    padding:0;
+    border:none;
+}
+.card a:after {
+    display:inline-block;
+    width:1em;
+    height:1em;
+    line-height:1em;
+    text-align:center;
+    padding:0.5em;
+    content:'i';
+    content:'+';
+    font-family:serif;
+    font-weight:bold;
+    font-family:sans-serif;
+    position:absolute;
+    top:0;
+    bottom:0;
+    left:0;
+    right:0;
+    left:44%;
+    top:22%;
+    background:rgba(0,0,0,0.03);
+    color:rgba(255,255,255,0.1);
+    -webkit-transition:background 0.75s, color 0.75s, transform 1s;
+    transition:background 0.75s, color 0.75s, transform 1s;
+    border-radius:50%;
+    font-size:1.2em;
+    border:1px solid transparent;
+    border:2px solid rgba(255,255,255,0.1);
+    cursor:pointer;
+}
+.card a:hover h3,
+.card a:hover p {
+    text-decoration:none;
+}
+.card-info {
+    position:absolute;
+    bottom:0;
+    font-size:0.85em;
+    /*background:rgba(0,0,0,0.6);*/
+    color:#fff;
+    padding:0;
+    text-shadow:1px 1px 2px rgba(0,0,0,0.95);
+    width:100%;
+    height:18%;
+    max-height:18%;
+    overflow:hidden;
+    background:#333;
+    background:rgba(0,0,0,0.35);
+    -webkit-transition:max-height 0.3s, background 1.25s;
+    transition:max-height 0.3s, background 1.25s;
+}
+.card h3 {
+    /*font-size:1.7em;*/
+    margin-bottom:0.1em;
+    border-bottom:2px solid rgba(0,0,0,0.2);	
+    background-color:inherit;
+    color: inherit;
+    padding: 0.2em;
+}
+.card h3,
+.card p {
+    margin-top:0;
+    margin-bottom:0;
+    padding-top:0.1em;
+    padding-bottom:0.1em;
+    text-align:center;
+}
+.card p {
+    padding-left:0.4em;
+    padding-right:0.4em;
+    margin-bottom:0;
+    padding-bottom:0.5em;
+    color:rgba(255,255,255,0.01);
+    text-shadow:none;
+    -webkit-transition:all 1.6s;
+    transition:all 1.6s;
+}
+.card a {
+    display:block;
+}
+.card a:hover:after,
+.card a:focus:after {
+    background:rgba(0,0,0,0.15);
+    color:rgba(255,255,255,0.85);
+    border:1px solid rgba(0,0,0,0.1);
+    border:2px solid rgba(255,255,255,0.8);
+    /*box-shadow:0 0 .2em rgba(0,0,0,0.1);*/
+    -webkit-transform:scale(1.2);
+    transform:scale(1.2);
+}
+.card:hover .card-info,
+.card a:focus .card-info {
+    max-height:50%;
+    height:50%;
+    background:rgba(0,0,0,0.6);
+}
+.card a:hover .card-info p,
+.card a:focus .card-info p {
+    color:rgba(255,255,255,1);
+    text-shadow:0 0 2px rgba(0,0,0,0.9);
+}
+
+h2 {
+    /*position:relative;
+    background:#333;
+    color:#fff;	*/
+    /*margin-left:calc(-1em - 1% - 3px);
+    padding-left:calc(1em + 1% + 3px);*/
+    margin-left:-1.36em;
+    display:inline-block;
+    padding:.6em 1.36em .6em 1.36em;
+    box-shadow:0 2px 2px rgba(0,0,0,0.9);
+    text-align:left;
+    background-image:none;
+    border-radius:0;
+    background:#222;
+    text-shadow:none;
+    font-size:2em;
+}
+h2:after {
+    content:'';
+    display:block;
+    position:absolute;
+    bottom:-1em;
+    bottom:-.99em;
+    left:2px;
+    left:0;
+
+    width: 0; 
+    height: 0; 
+
+    z-index:1;
+
+    border-style: solid;
+    border-width: 0 1em 1em 0;
+    border-color: transparent #444 transparent;
+    border-color: transparent #000 transparent;
+
+}
+h2:before {
+    display:none;
+    content:none;
+}
+
+.panorama {
+    position:relative;
+    /*width:calc(102.01% + 1px);
+    margin:-0.75em 0 1em -1%;*/
+}
+.panorama img {
+    width:100%;
+}
+/*.panorama figcaption*/
+.panorama + h1 {
+    /*position:absolute;
+    top:2rem;
+    right:2rem;
+    background:#000;
+    background:rgba(0,0,0,0.6);
+    padding:.4em 2em;
+    text-shadow:0 0 1px rgba(0, 0, 0, 0.95);
+    border:3px solid #fff;
+    color:#fff;
+
+    margin:0;
+    font-size:1em;
+    position: relative;*/
+}
+.panorama figcaption h1 {
+    margin:0;
+}
+.panorama figcaption strong,
+.panorama + h1 strong {
+    font-weight: bold;
+}
+
+.product-box {
+    width: 23%;
+}
+/*}*/
