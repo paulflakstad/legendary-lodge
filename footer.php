@@ -9,7 +9,7 @@
     <div class="mw">
         <div class="footer-about">
             <p>
-                Legendary Lodge Senja<br />
+                Legendary Lodge Senja AS<br />
                 Botnhamnveien&nbsp;79<br />
                 9373&nbsp;Botnhamn<?php if (the_lang() != 'no') { ?><br />NORWAY<?php } ?>
             </p>
