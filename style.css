@@ -655,6 +655,11 @@ html[lang=no] .product-cta-booking:after {
     font-size: 1.8em;
     font-style: italic;
     font-weight: bold;
+    padding-left: 0;
+    padding-right: 0;
+}
+.product-price .currency {
+    font-size: 0.4em;
 }
 .product-price-info {
     font-size: 0.8em;

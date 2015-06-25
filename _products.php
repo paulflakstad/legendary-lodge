@@ -27,7 +27,7 @@ if ($products_sections) {
                 echo '<li class="product-box">';
                 echo '<h3 class="product-title">' . $title . '</h3>';
                 echo '<span class="' . $timespan . '"></span>';
-                echo '<p class="product-price">' . $price .',–</p>';
+                echo '<p class="product-price">' . (the_lang() == 'no' ? '' : '<span class="currency" title="Norwegian Kroner">NOK</span>&nbsp;') . $price . (the_lang() == 'no' ? ',–' : '.00') . '</p>';
                 echo '<p class="product-price-info">' . $price_info .'</p>';
                 echo '<a class="product-cta-booking" href="' . (the_lang() == 'no' ? '/booking/' : '/en/booking-request/') . '"></a>';
 
