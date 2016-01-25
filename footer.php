@@ -16,12 +16,12 @@
             <dl>
             <?php if (the_lang() != 'no') { ?>
                 <dt><i class="icon-phone" title="Phone number"></i></dt>
-                    <dd>+47&nbsp;951&nbsp;91&nbsp;513</dd>
+                    <dd>+47&nbsp;981&nbsp;32&nbsp;209</dd>
                 <dt><i class="icon-envelope" title="In writing"></i></dt>
                     <dd><a href="/en/about/contact/">Contact us</a></dd>
             <?php } else { ?>
                 <dt><i class="icon-phone" title="Telefonnummer"></i></dt>
-                    <dd>951&nbsp;91&nbsp;513</dd>
+                    <dd>981&nbsp;32&nbsp;209</dd>
                 <dt><i class="icon-envelope" title="Skriftlig"></i></dt>
                     <dd><a href="/om-oss/kontakt-oss/">Kontakt oss</a></dd>
             <?php } ?>
