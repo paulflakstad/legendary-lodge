@@ -50,7 +50,6 @@
         	<ul>
             	<li><a href="http://www.devold.com/"><img src="<?php echo get_template_directory_uri(); ?>/img/partners/devold.png" alt="" /></a></li>
             	<li><a href="http://www.dynafit.com/"><img src="<?php echo get_template_directory_uri(); ?>/img/partners/dynafit.png" alt="" /></a></li>
-            	<li><a href="http://www.haglofs.com/"><img src="<?php echo get_template_directory_uri(); ?>/img/partners/haglofs.png" alt="" /></a></li>
             	<li><a href="http://www.backcountryaccess.com/"><img src="<?php echo get_template_directory_uri(); ?>/img/partners/bca.png" alt="" /></a></li>
             </ul>
         </aside>
